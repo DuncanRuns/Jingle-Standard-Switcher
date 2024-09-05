@@ -2,5 +2,5 @@
   "name": "Standard Switcher",
   "id": "standard-switcher",
   "version": "${version}",
-  "initializer": "xyz.duncanruns.jingle.standardswitcher.StandardSwitcherPlugin::initialize"
+  "initializer": "xyz.duncanruns.jingle.standardswitcher.StandardSwitcher::initialize"
 }
