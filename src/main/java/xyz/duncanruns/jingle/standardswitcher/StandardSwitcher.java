@@ -40,10 +40,6 @@ public class StandardSwitcher {
     private JButton openStandardSwitcherFolderButton;
     private JLabel currentFileLabel;
 
-    private boolean exists = false;
-    private boolean isManaged = false;
-    private boolean isGlobal = false;
-
     private Path usedFilePath;
 
     public StandardSwitcher() {
@@ -193,9 +189,9 @@ public class StandardSwitcher {
             return;
         }
 
-        exists = Files.exists(usedFilePath);
-        isManaged = usedFilePath.getParent().toAbsolutePath().equals(FOLDER);
-        isGlobal = !instance.instancePath.resolve("config").resolve("mcsr").resolve("standardsettings.json").toAbsolutePath().equals(usedFilePath.toAbsolutePath());
+        boolean exists = Files.exists(usedFilePath);
+        boolean isManaged = usedFilePath.getParent().toAbsolutePath().equals(FOLDER);
+        boolean isGlobal = !instance.instancePath.resolve("config").resolve("mcsr").resolve("standardsettings.json").toAbsolutePath().equals(usedFilePath.toAbsolutePath());
 
         this.instancePanel.setVisible(true);
 
